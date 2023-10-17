@@ -1,5 +1,3 @@
-import '@/styles/index.css';
-
 function Layout({ children }) {
     return (
         <div>
