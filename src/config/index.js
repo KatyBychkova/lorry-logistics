@@ -1,1 +1,2 @@
-export { content } from '@/config/content.js';
+export * as geo from './geo.js';
+export { content } from './content.js';

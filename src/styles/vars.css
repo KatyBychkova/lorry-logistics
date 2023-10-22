@@ -1,3 +1,12 @@
 :root {
-    --container-width: 1190px;
+    --main-bg-color: #fff;
+    --minor-color: #fff;
+
+    --container-width: 1250px;
+    --content-width: 960px;
+    --title-primary-color: #043a7c;
+    --title-minor-color: #0b4994;
+    --title-font-size: 30px;
+    --title-line-height: 30px;
+    --text-color: #000;
 }

@@ -1,0 +1,38 @@
+.section {
+    height: 100px;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    color: var(--title-primary-color);
+
+    background-color: transparent;
+}
+
+.container {
+    max-width: var(--container-width);
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slogan {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.55;
+    letter-spacing: -1px;
+}
+
+.telephoneLink {
+    color: var(--title-primary-color);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.55;
+    text-decoration: none;
+}

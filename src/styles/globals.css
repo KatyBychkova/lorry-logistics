@@ -1,3 +1,31 @@
+@media (max-width: 1200px) {
+    :root {
+        --container-width: 940px;
+    }
+}
+
+@media (max-width: 960px) {
+    :root {
+        --container-width: 630px;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --container-width: 465px;
+        --title-font-size: 24px;
+        --title-line-height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-width: 310px;
+        --title-font-size: 20px;
+        --title-line-height: 20px;
+    }
+}
+
 html {
     box-sizing: border-box;
 }
@@ -44,9 +72,10 @@ select {
 }
 
 body {
-    color: var(--font-color);
-    font-weight: 400;
+    color: var(--text-color);
+    font-weight: 300;
     font-size: 16px;
-    font-family: "Gilroy", "Arial", sans-serif;
+    /* font-family: "Gilroy", "Arial", sans-serif; */
+    font-family: "Roboto", "Arial", sans-serif;
     line-height: 21px;
 }
