@@ -22,10 +22,10 @@ export default function MyApp({ pageProps }) {
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
 
             <About {...pageProps} />
-            <CallToAction isSubmit={setSubmit} onSubmitted={handleSubmit} />
+            <CallToAction isSubmit={isSubmit} onSubmitted={handleSubmit} />
             <Geography {...pageProps} />
             <Feedback {...pageProps} />
-            <CallToAction {...pageProps} />
+            <CallToAction isSubmit={isSubmit} onSubmitted={handleSubmit} />
         </Layout>
     );
 }

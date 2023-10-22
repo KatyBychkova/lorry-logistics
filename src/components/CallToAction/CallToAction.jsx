@@ -37,8 +37,6 @@ function CallToAction({ isSubmit, onSubmitted }) {
         tel: "",
         city: "",
     });
-    const x = isSubmit;
-    useEffect(() => {}, [x]);
 
     const [data, setData] = useState(initialData);
 
@@ -111,7 +109,6 @@ function CallToAction({ isSubmit, onSubmitted }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const isValid = validate();
-
         if (!isValid) {
             setNameDirty(true);
             setTelDirty(true);
@@ -121,7 +118,6 @@ function CallToAction({ isSubmit, onSubmitted }) {
         // eslint-disable-next-line no-console
         console.log(JSON.stringify(data));
 
-        isSubmit(true);
         // setModal(typeModalSubmitted);
         console.log(isSubmit);
         onSubmitted(true);
@@ -131,120 +127,128 @@ function CallToAction({ isSubmit, onSubmitted }) {
 
     return (
         <section className={styles.section}>
-            {!x ? <div>Контент</div> : <div>Не Контент</div>}
-            <div className={styles.container}>
-                <h1 className={styles.title}>{title}</h1>
-                <div className={styles.subtitle}>
-                    <p className={styles.mainAction}>
-                        {mainAction}
-                        <Link
-                            className={styles.telephoneLink}
-                            href={`tel:${telefonFormatForLink}`}
-                        >
-                            {telephone}
-                        </Link>
-                    </p>
-                    <p className={styles.alternativeAction}>
-                        {alternativeAction}
-                    </p>
-                    <p className={styles.responseAction}>{responseAction}</p>
-                </div>
-                {/* ----------------------------------- Form ------------------------------ */}
-                <div className={styles.form_inner}>
-                    <form className={styles.form} onSubmit={handleSubmit}>
-                        <div className={styles.form_tel}>
-                            <PhoneInput
-                                country="ru"
-                                error={errors.tel}
-                                id="tel"
-                                inputClass={styles.phone}
-                                inputProps={{ required: true }}
-                                inputStyle={
-                                    telDirty && errors.tel
-                                        ? { ...inputTelStylesError }
-                                        : { ...inputTelStyles }
-                                }
-                                name="tel"
-                                placeholder={placeholderTelephone}
-                                specialLabel={null}
-                                value={data.tel}
-                                // onBlur={() => setTelDirty(true)}
-                                onChange={handleTelChange}
-                            />
-                        </div>
-
-                        <div
-                            className={
-                                telDirty && errors.tel
-                                    ? styles.form_error
-                                    : styles.form_name
-                            }
-                        >
-                            <input
-                                id="name"
-                                name="name"
-                                placeholder={placeholderName}
-                                style={
-                                    nameDirty && errors.name
-                                        ? {
-                                              borderColor: "#d1274a",
-                                              boxShadow: "none",
-                                          }
-                                        : { borderColor: "#064488" }
-                                }
-                                type="text"
-                                value={data.name}
-                                // onBlur={(e) => blurHandlerName(e)}
-                                onChange={handleNameChange}
-                            />
-                        </div>
-                        <div>
-                            <input
-                                id="city"
-                                name="city"
-                                placeholder={placeholderCity}
-                                type="text"
-                                value={data.city}
-                                onBlur={(e) => blurHandlerName(e)}
-                                onChange={handleNameChange}
-                            />
-                        </div>
-
-                        <div className={styles.callToActionSubmit}>
-                            <div>
-                                <button
-                                    className={styles.callToActionSubmit_btn}
-                                    type="submit"
-                                >
-                                    {submitBtnText}
-                                </button>
+            {!isSubmit ? (
+                <div className={styles.container}>
+                    <h1 className={styles.title}>{title}</h1>
+                    <div>{isSubmit}</div>
+                    <div className={styles.subtitle}>
+                        <p className={styles.mainAction}>
+                            {mainAction}
+                            <Link
+                                className={styles.telephoneLink}
+                                href={`tel:${telefonFormatForLink}`}
+                            >
+                                {telephone}
+                            </Link>
+                        </p>
+                        <p className={styles.alternativeAction}>
+                            {alternativeAction}
+                        </p>
+                        <p className={styles.responseAction}>
+                            {responseAction}
+                        </p>
+                    </div>
+                    {/* ----------------------------------- Form ------------------------------ */}
+                    <div className={styles.form_inner}>
+                        <form className={styles.form} onSubmit={handleSubmit}>
+                            <div className={styles.form_tel}>
+                                <PhoneInput
+                                    country="ru"
+                                    error={errors.tel}
+                                    id="tel"
+                                    inputClass={styles.phone}
+                                    inputProps={{ required: true }}
+                                    inputStyle={
+                                        telDirty && errors.tel
+                                            ? { ...inputTelStylesError }
+                                            : { ...inputTelStyles }
+                                    }
+                                    name="tel"
+                                    placeholder={placeholderTelephone}
+                                    specialLabel={null}
+                                    value={data.tel}
+                                    // onBlur={() => setTelDirty(true)}
+                                    onChange={handleTelChange}
+                                />
                             </div>
-                        </div>
-                    </form>
-                </div>
 
-                {telDirty && errors.tel ? (
-                    <div className={styles.errorAlert}> {errors.tel}</div>
-                ) : nameDirty && errors.name ? (
-                    <div className={styles.errorAlert}> {errors.name}</div>
-                ) : null}
+                            <div
+                                className={
+                                    telDirty && errors.tel
+                                        ? styles.form_error
+                                        : styles.form_name
+                                }
+                            >
+                                <input
+                                    id="name"
+                                    name="name"
+                                    placeholder={placeholderName}
+                                    style={
+                                        nameDirty && errors.name
+                                            ? {
+                                                  borderColor: "#d1274a",
+                                                  boxShadow: "none",
+                                              }
+                                            : { borderColor: "#064488" }
+                                    }
+                                    type="text"
+                                    value={data.name}
+                                    // onBlur={(e) => blurHandlerName(e)}
+                                    onChange={handleNameChange}
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    id="city"
+                                    name="city"
+                                    placeholder={placeholderCity}
+                                    type="text"
+                                    value={data.city}
+                                    onBlur={(e) => blurHandlerName(e)}
+                                    onChange={handleNameChange}
+                                />
+                            </div>
 
-                {/* ----------------------------------- Terms ------------------------------ */}
-                <div className={styles.terms}>
-                    {terms.text}
-                    <span>
-                        <button
-                            className={styles.terms_btn}
-                            onClick={() => {
-                                openModal(true);
-                                setModal(typeTerms);
-                            }}
-                        >
-                            {terms.linkText}
-                        </button>
-                    </span>
+                            <div className={styles.callToActionSubmit}>
+                                <div>
+                                    <button
+                                        className={
+                                            styles.callToActionSubmit_btn
+                                        }
+                                        type="submit"
+                                    >
+                                        {submitBtnText}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    {telDirty && errors.tel ? (
+                        <div className={styles.errorAlert}> {errors.tel}</div>
+                    ) : nameDirty && errors.name ? (
+                        <div className={styles.errorAlert}> {errors.name}</div>
+                    ) : null}
+
+                    {/* ----------------------------------- Terms ------------------------------ */}
+                    <div className={styles.terms}>
+                        {terms.text}
+                        <span>
+                            <button
+                                className={styles.terms_btn}
+                                onClick={() => {
+                                    openModal(true);
+                                    setModal(typeTerms);
+                                }}
+                            >
+                                {terms.linkText}
+                            </button>
+                        </span>
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <div>Не Контент</div>
+            )}
         </section>
     );
 }
