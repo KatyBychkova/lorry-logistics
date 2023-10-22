@@ -88,3 +88,9 @@
         font-size: 18px;
     }
 }
+
+@media (max-width: 480px) {
+    .section {
+        padding: 50px 0 50px;
+    }
+}

@@ -23,6 +23,7 @@
     font-weight: 600;
     font-size: var(--title-font-size);
     line-height: var(--title-line-height);
+    text-align: center;
 }
 
 .opinionItem {
@@ -158,4 +159,7 @@
 }
 
 @media (max-width: 480px) {
+    .section {
+        padding: 50px 0 50px;
+    }
 }
