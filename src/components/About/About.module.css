@@ -22,7 +22,7 @@
 }
 
 .container {
-    max-width: var(--content-width);
+    width: var(--content-width);
     margin: 0 auto;
     padding: 0 15px;
     overflow: hidden;
@@ -33,7 +33,7 @@
 }
 
 .positivePoint {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 
     font-weight: 700;
     font-size: 22px;
@@ -44,11 +44,11 @@
     color: var(--primary-color);
     font-weight: 500;
     font-size: var(--title-font-size);
-    line-height: var(--title-line-height);
+    line-height: 1.45;
 }
 
 .subtitle {
-    margin: 20px 0;
+    margin: 25px 0;
 
     color: var(--accent-color);
     font-weight: 300;
@@ -58,10 +58,48 @@
 }
 
 @media (max-width: 960px) {
+    .subtitle {
+        width: 400px;
+
+        font-size: 30px;
+        line-height: 28px;
+    }
 }
 
 @media (max-width: 640px) {
+    .positivePoint {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .title {
+        font-size: 34px;
+        line-height: 1.25;
+    }
+
+    .subtitle {
+        font-size: 26px;
+        line-height: 1.25;
+    }
 }
 
 @media (max-width: 480px) {
+    .positivePoint {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 1.25;
+    }
+
+    .subtitle {
+        width: 300px;
+
+        font-size: 18px;
+        line-height: 1.25;
+    }
 }
