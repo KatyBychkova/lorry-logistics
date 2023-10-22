@@ -28,8 +28,8 @@
 
 @media (max-width: 640px) {
     :root {
-        --container-width: 460px;
-        --content-width: 460px;
+        --container-width: 520px;
+        --content-width: 520px;
         --title-font-size: 30px;
         --title-line-height: 30px;
     }
