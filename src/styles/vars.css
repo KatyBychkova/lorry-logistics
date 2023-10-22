@@ -21,6 +21,8 @@
     :root {
         --container-width: 630px;
         --content-width: 630px;
+        --title-font-size: 38px;
+        --title-line-height: 38px;
     }
 }
 
@@ -28,16 +30,14 @@
     :root {
         --container-width: 460px;
         --content-width: 460px;
-        --title-font-size: 24px;
-        --title-line-height: 24px;
+        --title-font-size: 30px;
+        --title-line-height: 30px;
     }
 }
 
 @media (max-width: 480px) {
     :root {
-        --container-width: 310px;
-        --content-width: 310px;
-        --title-font-size: 20px;
-        --title-line-height: 20px;
+        --container-width: 450px;
+        --content-width: 450px;
     }
 }

@@ -34,6 +34,7 @@
     font-weight: 600;
     font-size: var(--title-font-size);
     line-height: var(--title-line-height);
+    text-align: center;
 }
 
 .subtitle {
@@ -152,4 +153,33 @@ div.callToActionSubmit {
     border: none;
 
     cursor: pointer;
+}
+
+@media (max-width: 960px) {
+    .form {
+        flex-direction: column;
+    }
+
+    .subtitle,
+    .telephoneLink {
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .subtitle,
+    .telephoneLink {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subtitle,
+    .telephoneLink {
+        width: 100%;
+
+        font-size: 20px;
+    }
 }
