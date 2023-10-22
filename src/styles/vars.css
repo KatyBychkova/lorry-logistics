@@ -1,12 +1,43 @@
 :root {
     --main-bg-color: #fff;
     --minor-color: #fff;
-
     --container-width: 1250px;
     --content-width: 960px;
     --title-primary-color: #043a7c;
     --title-minor-color: #0b4994;
-    --title-font-size: 30px;
-    --title-line-height: 30px;
+    --title-font-size: 42px;
+    --title-line-height: 42px;
     --text-color: #000;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --container-width: 940px;
+        --content-width: 940px;
+    }
+}
+
+@media (max-width: 960px) {
+    :root {
+        --container-width: 630px;
+        --content-width: 630px;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --container-width: 460px;
+        --content-width: 460px;
+        --title-font-size: 24px;
+        --title-line-height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-width: 310px;
+        --content-width: 310px;
+        --title-font-size: 20px;
+        --title-line-height: 20px;
+    }
 }

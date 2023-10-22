@@ -21,8 +21,8 @@
 
     color: var(--title-primary-color);
     font-weight: 600;
-    font-size: 42px;
-    line-height: 1.23;
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
 }
 
 .opinionItem {

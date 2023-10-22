@@ -16,9 +16,9 @@
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url(../../assets/images/main-bg.jpg);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center 50px;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
 }
 
 .container {
@@ -29,7 +29,7 @@
 }
 
 .wrapper {
-    width: 1000px;
+    width: 100%;
 }
 
 .positivePoint {
@@ -43,8 +43,8 @@
 .title {
     color: var(--primary-color);
     font-weight: 500;
-    font-size: 42px;
-    line-height: 1.45;
+    font-size: var(--title-font-size);
+    line-height: var(--title-line-height);
 }
 
 .subtitle {
@@ -55,4 +55,13 @@
     font-size: 32px;
     line-height: 1.55;
     letter-spacing: -1px;
+}
+
+@media (max-width: 960px) {
+}
+
+@media (max-width: 640px) {
+}
+
+@media (max-width: 480px) {
 }

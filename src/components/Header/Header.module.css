@@ -1,5 +1,4 @@
 .section {
-    height: 100px;
     margin: 0 auto;
     padding: 30px 0;
 
@@ -23,16 +22,73 @@
 }
 
 .slogan {
+    order: 1;
+
     font-weight: 400;
     font-size: 20px;
     line-height: 1.55;
     letter-spacing: -1px;
 }
+.logo {
+    order: 2;
+}
 
+.telephone {
+    order: 3;
+}
 .telephoneLink {
     color: var(--title-primary-color);
     font-weight: 700;
     font-size: 20px;
     line-height: 1.55;
     text-decoration: none;
+}
+
+@media (max-width: 960px) {
+    .logoImage {
+        height: 70px;
+
+        vertical-align: center;
+    }
+
+    .slogan,
+    .telephoneLink {
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .slogan {
+        order: 3;
+
+        font-size: 14px;
+        line-height: 10px;
+    }
+    .logo {
+        order: 1;
+        width: 60%;
+    }
+
+    .telephone {
+        order: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .logoImage {
+        height: 55px;
+    }
+    .telephoneLink {
+        font-size: 14px;
+        line-height: 14px;
+    }
 }

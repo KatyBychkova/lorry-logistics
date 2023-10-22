@@ -14,7 +14,10 @@ function Header() {
             <div className={styles.wrapper}>
                 <div className={styles.slogan}>{slogan}</div>
                 <div className={styles.logo}>
-                    <LorryWhiteLogoIcon height="95" />
+                    <LorryWhiteLogoIcon
+                        className={styles.logoImage}
+                        height="95"
+                    />
                 </div>
                 <div className={styles.telephone}>
                     <Link
