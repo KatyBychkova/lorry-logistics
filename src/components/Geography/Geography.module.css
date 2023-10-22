@@ -23,6 +23,7 @@
     font-weight: 600;
     font-size: var(--title-font-size);
     line-height: var(--title-line-height);
+    text-align: center;
 }
 
 .districts {
@@ -64,4 +65,32 @@
 
 .districtAdress {
     color: #000;
+}
+
+@media (max-width: 960px) {
+    .districts {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .districtName {
+        margin-bottom: 18px;
+
+        color: #000;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .districtRegion,
+    .districtCity,
+    .districtAdress {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 640px) {
+}
+
+@media (max-width: 480px) {
 }
