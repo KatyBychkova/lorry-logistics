@@ -1,6 +1,6 @@
-import { content } from "@/config/index.js";
+import { content } from '@/config/index.js';
 
-import styles from "./Geography.module.css";
+import styles from './Geography.module.css';
 
 const { geography } = content;
 const { title, districts } = geography;

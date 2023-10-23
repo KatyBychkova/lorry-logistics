@@ -1,9 +1,11 @@
-import { content } from "@/config/index.js";
+import { content } from '@/config/index.js';
 
-import styles from "./About.module.css";
+import styles from './About.module.css';
 
 const { about } = content;
-const { titleFirst, titleSecond, subtitle, positivePoint } = about;
+const {
+    titleFirst, titleSecond, subtitle, positivePoint,
+} = about;
 
 function About() {
     return (

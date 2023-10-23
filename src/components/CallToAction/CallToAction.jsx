@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import PhoneInput from "react-phone-input-2";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
 
-import { content } from "@/config/index.js";
-import { validator } from "@/utils/validator.jsx";
-import inputStyles from "@/styles/inputTelStyles.json";
+import { content } from '@/config/index.js';
+import { validator } from '@/utils/validator.js';
+import inputStyles from '@/styles/inputTelStyles.json';
 
-import styles from "./CallToAction.module.css";
+import styles from './CallToAction.module.css';
 
-import "react-phone-input-2/lib/material.css";
+import 'react-phone-input-2/lib/material.css';
 
 const { callToAction, telefonFormatForLink } = content;
 const {
@@ -33,9 +33,9 @@ function CallToAction({ isSubmit, onSubmitted }) {
     const [telDirty, setTelDirty] = useState(false);
 
     const [initialData] = useState({
-        name: "",
-        tel: "",
-        city: "",
+        name: '',
+        tel: '',
+        city: '',
     });
 
     const [data, setData] = useState(initialData);
@@ -43,7 +43,7 @@ function CallToAction({ isSubmit, onSubmitted }) {
     const [errors, setErrors] = useState({});
 
     const blurHandlerName = (e) => {
-        if (e.target.name === "name") {
+        if (e.target.name === 'name') {
             setNameDirty(true);
         }
     };
@@ -72,25 +72,25 @@ function CallToAction({ isSubmit, onSubmitted }) {
     const validatorConfig = {
         name: {
             isRequired: {
-                message: "Пожалуйста, заполните все обязательные поля",
+                message: 'Пожалуйста, заполните все обязательные поля',
             },
             min: {
-                message: "Имя должно содержать минимум 2 символа",
+                message: 'Имя должно содержать минимум 2 символа',
                 value: 2,
             },
             isName: {
-                message: "Имя некорректно",
+                message: 'Имя некорректно',
             },
         },
         tel: {
             isRequired: {
-                message: "Пожалуйста, заполните все обязательные поля",
+                message: 'Пожалуйста, заполните все обязательные поля',
             },
             isTel: {
-                message: "Номер введен некорректно",
+                message: 'Номер введен некорректно',
             },
             min: {
-                message: "Слишком короткий номер",
+                message: 'Слишком короткий номер',
                 value: 9,
             },
         },
@@ -119,9 +119,7 @@ function CallToAction({ isSubmit, onSubmitted }) {
         console.log(JSON.stringify(data));
 
         // setModal(typeModalSubmitted);
-        console.log(isSubmit);
         onSubmitted(true);
-        console.log(isSubmit);
         cleanForm();
     };
 
@@ -186,10 +184,10 @@ function CallToAction({ isSubmit, onSubmitted }) {
                                     style={
                                         nameDirty && errors.name
                                             ? {
-                                                  borderColor: "#d1274a",
-                                                  boxShadow: "none",
-                                              }
-                                            : { borderColor: "#064488" }
+                                                borderColor: '#d1274a',
+                                                boxShadow: 'none',
+                                            }
+                                            : { borderColor: '#064488' }
                                     }
                                     type="text"
                                     value={data.name}
@@ -225,9 +223,15 @@ function CallToAction({ isSubmit, onSubmitted }) {
                     </div>
 
                     {telDirty && errors.tel ? (
-                        <div className={styles.errorAlert}> {errors.tel}</div>
+                        <div className={styles.errorAlert}>
+                            {' '}
+                            {errors.tel}
+                        </div>
                     ) : nameDirty && errors.name ? (
-                        <div className={styles.errorAlert}> {errors.name}</div>
+                        <div className={styles.errorAlert}>
+                            {' '}
+                            {errors.name}
+                        </div>
                     ) : null}
 
                     {/* ----------------------------------- Terms ------------------------------ */}
@@ -237,8 +241,8 @@ function CallToAction({ isSubmit, onSubmitted }) {
                             <button
                                 className={styles.terms_btn}
                                 onClick={() => {
-                                    openModal(true);
-                                    setModal(typeTerms);
+                                    // openModal(true);
+                                    // setModal(typeTerms);
                                 }}
                             >
                                 {terms.linkText}

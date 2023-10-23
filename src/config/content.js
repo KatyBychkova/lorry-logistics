@@ -1,5 +1,5 @@
 export const content = {
-    telefonFormatForLink: '+78005111817',
+    telephoneFormatForLink: '+78005111817',
     header: {
         telephone: '8 800 511 1817',
 

@@ -1,9 +1,9 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { content } from "@/config/index.js";
+import { content } from '@/config/index.js';
 
-import styles from "./Header.module.css";
-import LorryWhiteLogoIcon from "../../assets/logo/lorry-white.svg";
+import styles from './Header.module.css';
+import LorryWhiteLogoIcon from '../../assets/logo/lorry-white.svg';
 
 const { header, telefonFormatForLink } = content;
 const { telephone, slogan } = header;

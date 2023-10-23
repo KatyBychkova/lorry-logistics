@@ -1,31 +1,12 @@
-"use client";
+import Layout from '@/components/Layout/Layout.jsx';
 
-import { useState } from "react";
+import '@/styles/index.css';
 
-import About from "@/components/About/About";
-import CallToAction from "@/components/CallToAction/CallToAction";
-import Feedback from "@/components/Feedback/Feedback";
-import Geography from "@/components/Geography/Geography";
-import Layout from "@/components/Layout/Layout.jsx";
-
-import "@/styles/index.css";
-
-export default function MyApp({ pageProps }) {
-    const [isSubmit, setSubmit] = useState(false);
-
-    const handleSubmit = () => {
-        setSubmit(false);
-    };
-
+export default function MyApp({ Component, pageProps }) {
     return (
         <Layout>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-
-            <About {...pageProps} />
-            <CallToAction isSubmit={isSubmit} onSubmitted={handleSubmit} />
-            <Geography {...pageProps} />
-            <Feedback {...pageProps} />
-            <CallToAction isSubmit={isSubmit} onSubmitted={handleSubmit} />
+            <Component {...pageProps} />
         </Layout>
     );
 }

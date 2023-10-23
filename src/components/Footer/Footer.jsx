@@ -1,7 +1,7 @@
-import styles from "@/components/Footer/Footer.module.css";
-import { content } from "@/config/index.js";
+import styles from '@/components/Footer/Footer.module.css';
+import { content } from '@/config/index.js';
 
-import LorryBlueLogoIcon from "../../assets/logo/lorry-blue.svg";
+import LorryBlueLogoIcon from '../../assets/logo/lorry-blue.svg';
 
 const { footer } = content;
 const { copy } = footer;

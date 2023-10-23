@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-import { content } from "@/config/index.js";
+import { content } from '@/config/index.js';
 
-import styles from "./Feedback.module.css";
+import styles from './Feedback.module.css';
 
 const { feedback } = content;
 const { title, opinions } = feedback;
@@ -19,7 +19,7 @@ function Feedback() {
                                 key={`${opinion.name}-${opinion.profession}`}
                                 className={styles.opinion}
                             >
-                                {opinion.photoLeft === "true" ? (
+                                {opinion.photoLeft === 'true' ? (
                                     <div className={styles.opinionItem}>
                                         <div className={styles.photoWrapper}>
                                             <Image
