@@ -27,6 +27,7 @@ export const content = {
             linkText: ' политикой конфиденциальности',
             href: '#',
         },
+        afterSubmitText: 'Спасибо! Данные успешно отправлены.',
     },
     geography: {
         title: 'Наши подразделения',
