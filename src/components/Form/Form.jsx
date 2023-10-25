@@ -110,7 +110,6 @@ function Form({ onSubmitted }) {
 
     return (
         <div className={styles.container}>
-            {/* ----------------------------------- Form ------------------------------ */}
             <div className={styles.form_inner}>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.form_tel}>
@@ -167,7 +166,15 @@ function Form({ onSubmitted }) {
                             onChange={handleNameChange}
                         />
                     </div>
-
+                    {telDirty && errors.tel ? (
+                        <div className={styles.errorAlertMiddle}>
+                            {errors.tel}
+                        </div>
+                    ) : nameDirty && errors.name ? (
+                        <div className={styles.errorAlertMiddle}>
+                            {errors.name}
+                        </div>
+                    ) : null}
                     <div className={styles.formSubmit}>
                         <div>
                             <button

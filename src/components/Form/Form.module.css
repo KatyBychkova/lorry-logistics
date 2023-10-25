@@ -1,4 +1,5 @@
-.errorAlert {
+.errorAlert,
+.errorAlertMiddle {
     width: 100%;
     max-width: var(--content-width);
     margin: 20px 0;
@@ -9,6 +10,14 @@
     text-align: center;
 
     background-color: #f95d51;
+}
+
+.errorAlertMiddle {
+    display: none;
+}
+
+.errorAlert {
+    display: block;
 }
 
 .container {
@@ -95,5 +104,14 @@ div.callToActionSubmit {
 @media (max-width: 960px) {
     .form {
         flex-direction: column;
+    }
+
+    .errorAlertMiddle {
+        display: block;
+        margin: 0;
+    }
+
+    .errorAlert {
+        display: none;
     }
 }
