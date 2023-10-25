@@ -13,7 +13,7 @@ import styles from './CallToAction.module.css';
 
 import 'react-phone-input-2/lib/material.css';
 
-const { callToAction, telefonFormatForLink } = content;
+const { callToAction, telephoneFormatForLink } = content;
 const {
     title,
     mainAction,
@@ -134,7 +134,7 @@ function CallToAction() {
                         {mainAction}
                         <Link
                             className={styles.telephoneLink}
-                            href={`tel:${telefonFormatForLink}`}
+                            href={`tel:${telephoneFormatForLink}`}
                         >
                             {telephone}
                         </Link>

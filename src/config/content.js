@@ -108,6 +108,6 @@ export const content = {
         ],
     },
     footer: {
-        copy: '© 2023 Все права защищены',
+        copy: `© ${new Date().getFullYear()} Все права защищены`,
     },
 };

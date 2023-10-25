@@ -5,7 +5,7 @@ import { content } from '@/config/index.js';
 import styles from './Header.module.css';
 import LorryWhiteLogoIcon from '../../assets/logo/lorry-white.svg';
 
-const { header, telefonFormatForLink } = content;
+const { header, telephoneFormatForLink } = content;
 const { telephone, slogan } = header;
 
 function Header() {
@@ -22,7 +22,7 @@ function Header() {
                 <div className={styles.telephone}>
                     <Link
                         className={styles.telephoneLink}
-                        href={`tel:${telefonFormatForLink}`}
+                        href={`tel:${telephoneFormatForLink}`}
                     >
                         {telephone}
                     </Link>
