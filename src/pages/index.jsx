@@ -1,7 +1,3 @@
-'use client';
-
-import { useState } from 'react';
-
 import About from '@/components/About/About.jsx';
 import CallToAction from '@/components/CallToAction/CallToAction.jsx';
 import Feedback from '@/components/Feedback/Feedback.jsx';

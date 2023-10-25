@@ -1,15 +1,14 @@
-"use client";
+import Link from 'next/link';
+import { useState } from 'react';
 
-import Link from "next/link";
-import { useState } from "react";
+import Modal from '@/components/Modal/Modal.jsx';
+import { content } from '@/config/index.js';
 
-import Modal from "@/components/Modal/Modal.jsx";
-import Form from "@/components/Form/Form.jsx";
-import { content } from "@/config/index.js";
+import Terms from './Terms.jsx';
+import Form from './Form.jsx';
+import styles from './CallToAction.module.css';
 
-import styles from "./CallToAction.module.css";
-
-import "react-phone-input-2/lib/material.css";
+import 'react-phone-input-2/lib/material.css';
 
 const { callToAction, telephoneFormatForLink } = content;
 const {
@@ -66,8 +65,6 @@ function CallToAction() {
                         </div>
                     </div>
                 )}
-
-                {/* ----------------------------------- Terms ------------------------------ */}
                 <div className={styles.terms}>
                     {terms.text}
                     <span>
@@ -81,7 +78,9 @@ function CallToAction() {
                         </button>
                     </span>
                 </div>
-                <Modal isVisible={isShowModal} onClose={handleClose} />
+                <Modal isVisible={isShowModal} onClose={handleClose}>
+                    <Terms onClose={handleClose} />
+                </Modal>
             </div>
         </section>
     );

@@ -19,6 +19,28 @@
     animation: opacity 0.3s ease-in-out;
 }
 
+.container {
+    position: relative;
+    top: 0;
+    right: auto;
+    left: auto;
+    z-index: 1;
+
+    display: flex;
+    height: max-content;
+    margin: 0 auto;
+    margin-top: 70px;
+
+    background-color: #fff;
+    cursor: default;
+}
+
+.wrapper {
+    display: flex;
+    width: auto;
+    padding: 70px 45px 40px;
+}
+
 @keyframes opacity {
     0% {
         opacity: 0;

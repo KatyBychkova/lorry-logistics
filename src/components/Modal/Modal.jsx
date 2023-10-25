@@ -8,10 +8,9 @@ import {
 
 import CrossIcon from '../../assets/icons/cross.svg';
 import CloseButton from './CloseButton.jsx';
-import ModalTerms from './ModalTerms.jsx';
 import styles from './Modal.module.css';
 
-function Modal({ isVisible, onClose }) {
+function Modal({ isVisible, onClose, children }) {
     useEffect(() => {
         if (isVisible) {
             scrollLock();
@@ -26,12 +25,17 @@ function Modal({ isVisible, onClose }) {
 
     return (
         <div className={styles.main} onClick={onClose}>
-            <ModalTerms onClose={onClose} />
-
-            <div className={styles.close_btn}>
-                <CloseButton onClose={onClose}>
-                    <CrossIcon className={styles.closeCross} />
-                </CloseButton>
+            <div className={styles.container}>
+                <div className={styles.wrapper} onClick={(e) => e.stopPropagation()}>
+                    <div>
+                        { children }
+                    </div>
+                    <div className={styles.close_btn}>
+                        <CloseButton onClose={onClose}>
+                            <CrossIcon className={styles.closeCross} />
+                        </CloseButton>
+                    </div>
+                </div>
             </div>
         </div>
     );
