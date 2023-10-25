@@ -29,18 +29,44 @@ const {
 
 const { inputTelStyles, inputTelStylesError } = inputStyles;
 
+const validatorConfig = {
+    name: {
+        isRequired: {
+            message: 'Пожалуйста, заполните все обязательные поля',
+        },
+        min: {
+            message: 'Имя должно содержать минимум 2 символа',
+            value: 2,
+        },
+        isName: {
+            message: 'Имя некорректно',
+        },
+    },
+    tel: {
+        isRequired: {
+            message: 'Пожалуйста, заполните все обязательные поля',
+        },
+        isTel: {
+            message: 'Номер введен некорректно',
+        },
+        min: {
+            message: 'Слишком короткий номер',
+            value: 9,
+        },
+    },
+};
+
+const initialData = {
+    name: '',
+    tel: '',
+    city: '',
+};
+
 function CallToAction({ isSubmitted, onSubmit, openModal }) {
     const [nameDirty, setNameDirty] = useState(false);
     const [telDirty, setTelDirty] = useState(false);
 
-    const [initialData] = useState({
-        name: '',
-        tel: '',
-        city: '',
-    });
-
     const [data, setData] = useState(initialData);
-
     const [errors, setErrors] = useState({});
 
     const cleanForm = () => {
@@ -62,33 +88,6 @@ function CallToAction({ isSubmitted, onSubmit, openModal }) {
             ...prev,
             tel: value,
         }));
-    };
-
-    const validatorConfig = {
-        name: {
-            isRequired: {
-                message: 'Пожалуйста, заполните все обязательные поля',
-            },
-            min: {
-                message: 'Имя должно содержать минимум 2 символа',
-                value: 2,
-            },
-            isName: {
-                message: 'Имя некорректно',
-            },
-        },
-        tel: {
-            isRequired: {
-                message: 'Пожалуйста, заполните все обязательные поля',
-            },
-            isTel: {
-                message: 'Номер введен некорректно',
-            },
-            min: {
-                message: 'Слишком короткий номер',
-                value: 9,
-            },
-        },
     };
 
     const validate = () => {
