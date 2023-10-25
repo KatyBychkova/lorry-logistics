@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import {
     lock as scrollLock,
     unlock as scrollUnlock,
-} from "tua-body-scroll-lock";
+} from 'tua-body-scroll-lock';
 
-import CrossIcon from "../../assets/icons/cross.svg";
-import CloseButton from "./CloseButton.jsx";
-import ModalTerms from "./ModalTerms.jsx";
-import styles from "./Modal.module.css";
+import CrossIcon from '../../assets/icons/cross.svg';
+import CloseButton from './CloseButton.jsx';
+import ModalTerms from './ModalTerms.jsx';
+import styles from './Modal.module.css';
 
 function Modal({ isVisible, onClose }) {
     useEffect(() => {

@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout/Layout.jsx";
+import Layout from '@/components/Layout/Layout.jsx';
 
-import "@/styles/index.css";
+import '@/styles/index.css';
 
 export default function MyApp({ Component, pageProps }) {
     return (

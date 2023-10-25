@@ -12,7 +12,7 @@
     "lint-fix": "run-p lint-fix:*",
     "lint-fix:scripts": "npm run lint:scripts -- --fix",
     "lint-fix:styles": "npm run lint:styles -- --fix",
-    "svgo": "svgo ./src/assets/**"
+    "svgo": "find ./src/assets -name '*.svg' -exec svgo {} \\;"
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.1",

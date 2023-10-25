@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import PhoneInput from "react-phone-input-2";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
 
-import { content } from "@/config/index.js";
-import { validator } from "@/utils/validator.js";
-import inputStyles from "@/styles/inputTelStyles.json";
+import { content } from '@/config/index.js';
+import { validator } from '@/utils/validator.js';
+import inputStyles from '@/styles/inputTelStyles.json';
 
-import styles from "./CallToAction.module.css";
+import styles from './CallToAction.module.css';
 
-import "react-phone-input-2/lib/material.css";
+import 'react-phone-input-2/lib/material.css';
 
 const { callToAction, telefonFormatForLink } = content;
 const {
@@ -34,9 +34,9 @@ function CallToAction({ isSubmitted, onSubmit, openModal }) {
     const [telDirty, setTelDirty] = useState(false);
 
     const [initialData] = useState({
-        name: "",
-        tel: "",
-        city: "",
+        name: '',
+        tel: '',
+        city: '',
     });
 
     const [data, setData] = useState(initialData);
@@ -67,25 +67,25 @@ function CallToAction({ isSubmitted, onSubmit, openModal }) {
     const validatorConfig = {
         name: {
             isRequired: {
-                message: "Пожалуйста, заполните все обязательные поля",
+                message: 'Пожалуйста, заполните все обязательные поля',
             },
             min: {
-                message: "Имя должно содержать минимум 2 символа",
+                message: 'Имя должно содержать минимум 2 символа',
                 value: 2,
             },
             isName: {
-                message: "Имя некорректно",
+                message: 'Имя некорректно',
             },
         },
         tel: {
             isRequired: {
-                message: "Пожалуйста, заполните все обязательные поля",
+                message: 'Пожалуйста, заполните все обязательные поля',
             },
             isTel: {
-                message: "Номер введен некорректно",
+                message: 'Номер введен некорректно',
             },
             min: {
-                message: "Слишком короткий номер",
+                message: 'Слишком короткий номер',
                 value: 9,
             },
         },
@@ -180,10 +180,10 @@ function CallToAction({ isSubmitted, onSubmit, openModal }) {
                                         style={
                                             nameDirty && errors.name
                                                 ? {
-                                                      borderColor: "#d1274a",
-                                                      boxShadow: "none",
-                                                  }
-                                                : { borderColor: "#064488" }
+                                                    borderColor: '#d1274a',
+                                                    boxShadow: 'none',
+                                                }
+                                                : { borderColor: '#064488' }
                                         }
                                         type="text"
                                         value={data.name}
