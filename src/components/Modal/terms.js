@@ -1,7 +1,7 @@
 export default {
     title: {
         text: 'Политика в отношении обработки персональных данных, предоставляемых на сайте ',
-        attributes: 'www.promo.lorry.com (далее – Политика)',
+        attributes: 'promo.gt-m.ru (далее – Политика)',
     },
     paragraphs: [
         {

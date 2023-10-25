@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 
+import Modal from '@/components/Modal/Modal.jsx';
 import { content } from '@/config/index.js';
 import { validator } from '@/utils/validator.js';
 import inputStyles from '@/styles/inputTelStyles.json';
@@ -62,9 +63,15 @@ const initialData = {
     city: '',
 };
 
-function CallToAction({ isSubmitted, onSubmit, openModal }) {
+function CallToAction() {
     const [nameDirty, setNameDirty] = useState(false);
     const [telDirty, setTelDirty] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isShowModal, setIsShowModal] = useState(false);
+
+    const handleClose = () => {
+        setIsShowModal(false);
+    };
 
     const [data, setData] = useState(initialData);
     const [errors, setErrors] = useState({});
@@ -112,7 +119,7 @@ function CallToAction({ isSubmitted, onSubmit, openModal }) {
         // eslint-disable-next-line no-console
         console.log(JSON.stringify(data));
 
-        onSubmit(true);
+        setIsSubmitted(true);
 
         cleanForm();
     };
@@ -239,13 +246,14 @@ function CallToAction({ isSubmitted, onSubmit, openModal }) {
                         <button
                             className={styles.terms_btn}
                             onClick={() => {
-                                openModal(true);
+                                setIsShowModal(true);
                             }}
                         >
                             {terms.linkText}
                         </button>
                     </span>
                 </div>
+                <Modal isVisible={isShowModal} onClose={handleClose} />
             </div>
         </section>
     );
