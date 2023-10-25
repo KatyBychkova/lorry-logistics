@@ -17,17 +17,20 @@ export const content = {
         mainAction: 'Звони:',
         alternativeAction: 'или укажи контактную информацию',
         responseAction: 'расскажем подробности, ответим на вопросы',
-        telephone: '800 511 1817',
-        placeholderName: 'Имя',
-        placeholderTelephone: '+7 (999) 999-99-99',
-        placeholderCity: 'Город проживания',
-        submitBtnText: 'Отправить',
+
         terms: {
             text: 'Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c',
             linkText: ' политикой конфиденциальности',
             href: '#',
         },
         afterSubmitText: 'Спасибо! Данные успешно отправлены.',
+    },
+    form: {
+        telephone: '800 511 1817',
+        placeholderName: 'Имя',
+        placeholderTelephone: '+7 (999) 999-99-99',
+        placeholderCity: 'Город проживания',
+        submitBtnText: 'Отправить',
     },
     geography: {
         title: 'Наши подразделения',
