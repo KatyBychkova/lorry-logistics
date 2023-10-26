@@ -26,13 +26,15 @@
     align-items: center;
     width: 100%;
 
-    padding: 0 15px;
+    padding: 2px 15px 0;
+
     overflow: hidden;
 
     color: var(--title-minor-color);
 }
 
 .formInner {
+
     width: 100%;
 }
 
