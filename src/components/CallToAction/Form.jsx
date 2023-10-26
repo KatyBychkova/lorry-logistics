@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import PhoneInput from 'react-phone-input-2';
+import { useEffect, useState } from "react";
+import PhoneInput from "react-phone-input-2";
 
-import { content } from '@/config/index.js';
-import { validator } from '@/utils/validator.js';
-import inputStyles from '@/styles/inputTelStyles.json';
+import { content } from "@/config/index.js";
+import { validator } from "@/utils/validator.js";
+import inputStyles from "@/styles/inputTelStyles.json";
 
-import styles from './Form.module.css';
+import styles from "./Form.module.css";
 
-import 'react-phone-input-2/lib/material.css';
+import "react-phone-input-2/lib/material.css";
 
 const { form } = content;
 const {
@@ -22,34 +22,34 @@ const { inputTelStyles, inputTelStylesError } = inputStyles;
 const validatorConfig = {
     name: {
         isRequired: {
-            message: 'Пожалуйста, заполните все обязательные поля',
+            message: "Пожалуйста, заполните все обязательные поля",
         },
         min: {
-            message: 'Имя должно содержать минимум 2 символа',
+            message: "Имя должно содержать минимум 2 символа",
             value: 2,
         },
         isName: {
-            message: 'Имя некорректно',
+            message: "Имя некорректно",
         },
     },
     tel: {
         isRequired: {
-            message: 'Пожалуйста, заполните все обязательные поля',
+            message: "Пожалуйста, заполните все обязательные поля",
         },
         isTel: {
-            message: 'Номер введен некорректно',
+            message: "Номер введен некорректно",
         },
         min: {
-            message: 'Слишком короткий номер',
+            message: "Слишком короткий номер",
             value: 9,
         },
     },
 };
 
 const initialData = {
-    name: '',
-    tel: '',
-    city: '',
+    name: "",
+    tel: "",
+    city: "",
 };
 
 function Form({ onSubmitted }) {
@@ -58,6 +58,20 @@ function Form({ onSubmitted }) {
 
     const [data, setData] = useState(initialData);
     const [errors, setErrors] = useState({});
+
+    const [userError, setUserError] = useState(null);
+
+    useEffect(() => {
+        let message = null;
+
+        if (telDirty && errors.tel) {
+            message = errors.tel;
+        } else if (nameDirty && errors.name) {
+            message = errors.name;
+        }
+
+        setUserError(message);
+    }, [telDirty, nameDirty, errors]);
 
     const cleanForm = () => {
         setNameDirty(false);
@@ -145,10 +159,10 @@ function Form({ onSubmitted }) {
                             style={
                                 nameDirty && errors.name
                                     ? {
-                                        borderColor: '#d1274a',
-                                        boxShadow: 'none',
-                                    }
-                                    : { borderColor: '#064488' }
+                                          borderColor: "#d1274a",
+                                          boxShadow: "none",
+                                      }
+                                    : { borderColor: "#064488" }
                             }
                             type="text"
                             value={data.name}
@@ -165,15 +179,12 @@ function Form({ onSubmitted }) {
                             onChange={handleNameChange}
                         />
                     </div>
-                    {telDirty && errors.tel ? (
+
+                    {userError && (
                         <div className={styles.errorAlertMiddle}>
-                            {errors.tel}
+                            {userError}
                         </div>
-                    ) : nameDirty && errors.name ? (
-                        <div className={styles.errorAlertMiddle}>
-                            {errors.name}
-                        </div>
-                    ) : null}
+                    )}
                     <div className={styles.formSubmit}>
                         <div>
                             <button
@@ -186,11 +197,8 @@ function Form({ onSubmitted }) {
                     </div>
                 </form>
             </div>
-            {telDirty && errors.tel ? (
-                <div className={styles.errorAlert}>{errors.tel}</div>
-            ) : nameDirty && errors.name ? (
-                <div className={styles.errorAlert}>{errors.name}</div>
-            ) : null}
+
+            {userError && <div className={styles.errorAlert}>{userError}</div>}
         </div>
     );
 }
