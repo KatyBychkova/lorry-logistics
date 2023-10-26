@@ -69,7 +69,7 @@ function CallToAction() {
                     {terms.text}
                     <span>
                         <button
-                            className={styles.terms_btn}
+                            className={styles.termsBtn}
                             onClick={() => {
                                 setIsShowModal(true);
                             }}

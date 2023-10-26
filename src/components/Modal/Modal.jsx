@@ -30,7 +30,7 @@ function Modal({ isVisible, onClose, children }) {
                     <div>
                         { children }
                     </div>
-                    <div className={styles.close_btn}>
+                    <div className={styles.closeBtn}>
                         <CloseButton onClose={onClose}>
                             <CrossIcon className={styles.closeCross} />
                         </CloseButton>

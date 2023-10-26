@@ -50,7 +50,7 @@
     }
 }
 
-.close_btn button {
+.closeBtn button {
     position: fixed;
     top: 40px;
     right: 60px;

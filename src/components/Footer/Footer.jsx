@@ -11,7 +11,7 @@ function Footer() {
         <footer className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
-                    <div className={styles.logo_lorry}>
+                    <div className={styles.logoLorry}>
                         <LorryBlueLogoIcon height="36" />
                     </div>
 

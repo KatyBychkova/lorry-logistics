@@ -7,9 +7,9 @@ function Terms() {
     return (
         <div className={styles.content}>
             <div className={styles.title}>
-                <h1 className={styles.title_text}>
+                <h1 className={styles.titleText}>
                     {title.text}
-                    <span className={styles.title_attrubutes}>{title.attributes}</span>
+                    <span className={styles.titleAttrubutes}>{title.attributes}</span>
                 </h1>
             </div>
             <div className={styles.paragraphs}>

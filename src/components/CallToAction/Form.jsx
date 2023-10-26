@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import PhoneInput from "react-phone-input-2";
+import { useEffect, useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
 
-import { content } from "@/config/index.js";
-import { validator } from "@/utils/validator.js";
-import inputStyles from "@/styles/inputTelStyles.json";
+import { content } from '@/config/index.js';
+import { validator } from '@/utils/validator.js';
+import inputStyles from '@/styles/inputTelStyles.json';
 
-import styles from "./Form.module.css";
+import styles from './Form.module.css';
 
-import "react-phone-input-2/lib/material.css";
+import 'react-phone-input-2/lib/material.css';
 
 const { form } = content;
 const {
@@ -22,34 +22,34 @@ const { inputTelStyles, inputTelStylesError } = inputStyles;
 const validatorConfig = {
     name: {
         isRequired: {
-            message: "Пожалуйста, заполните все обязательные поля",
+            message: 'Пожалуйста, заполните все обязательные поля',
         },
         min: {
-            message: "Имя должно содержать минимум 2 символа",
+            message: 'Имя должно содержать минимум 2 символа',
             value: 2,
         },
         isName: {
-            message: "Имя некорректно",
+            message: 'Имя некорректно',
         },
     },
     tel: {
         isRequired: {
-            message: "Пожалуйста, заполните все обязательные поля",
+            message: 'Пожалуйста, заполните все обязательные поля',
         },
         isTel: {
-            message: "Номер введен некорректно",
+            message: 'Номер введен некорректно',
         },
         min: {
-            message: "Слишком короткий номер",
+            message: 'Слишком короткий номер',
             value: 9,
         },
     },
 };
 
 const initialData = {
-    name: "",
-    tel: "",
-    city: "",
+    name: '',
+    tel: '',
+    city: '',
 };
 
 function Form({ onSubmitted }) {
@@ -123,9 +123,9 @@ function Form({ onSubmitted }) {
 
     return (
         <div className={styles.container}>
-            <div className={styles.form_inner}>
+            <div className={styles.formInner}>
                 <form className={styles.form} onSubmit={handleSubmit}>
-                    <div className={styles.form_tel}>
+                    <div className={styles.formTel}>
                         <PhoneInput
                             country="ru"
                             error={errors.tel}
@@ -148,8 +148,8 @@ function Form({ onSubmitted }) {
                     <div
                         className={
                             telDirty && errors.tel
-                                ? styles.form_error
-                                : styles.form_name
+                                ? styles.formError
+                                : styles.formName
                         }
                     >
                         <input
@@ -159,10 +159,10 @@ function Form({ onSubmitted }) {
                             style={
                                 nameDirty && errors.name
                                     ? {
-                                          borderColor: "#d1274a",
-                                          boxShadow: "none",
-                                      }
-                                    : { borderColor: "#064488" }
+                                        borderColor: '#d1274a',
+                                        boxShadow: 'none',
+                                    }
+                                    : { borderColor: '#064488' }
                             }
                             type="text"
                             value={data.name}
@@ -188,7 +188,7 @@ function Form({ onSubmitted }) {
                     <div className={styles.formSubmit}>
                         <div>
                             <button
-                                className={styles.formSubmit_btn}
+                                className={styles.formSubmitBtn}
                                 type="submit"
                             >
                                 {submitBtnText}

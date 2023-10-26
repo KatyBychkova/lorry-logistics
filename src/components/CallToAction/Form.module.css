@@ -32,7 +32,7 @@
     color: var(--title-minor-color);
 }
 
-.form_inner {
+.formInner {
     width: 100%;
 }
 
@@ -86,7 +86,7 @@ div.callToActionSubmit {
     border-radius: 10px;
 }
 
-.formSubmit_btn {
+.formSubmitBtn {
     min-width: 180px;
 
     color: #fff;

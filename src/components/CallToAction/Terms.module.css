@@ -8,14 +8,14 @@
     color: #000;
 }
 
-.title_text {
+.titleText {
     font-weight: 700;
     font-size: 32px;
     line-height: 1.17;
     text-align: center;
 }
 
-.title_attrubutes {
+.titleAttrubutes {
     display: block;
 }
 
@@ -39,13 +39,13 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .title_text {
+    .titleText {
         font-size: 30px;
     }
 }
 
 @media screen and (max-width: 640px) {
-    .title_text {
+    .titleText {
         font-size: 26px;
     }
 }
