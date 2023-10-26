@@ -55,10 +55,8 @@ const initialData = {
 function Form({ onSubmitted }) {
     const [nameDirty, setNameDirty] = useState(false);
     const [telDirty, setTelDirty] = useState(false);
-
     const [data, setData] = useState(initialData);
     const [errors, setErrors] = useState({});
-
     const [userError, setUserError] = useState(null);
 
     useEffect(() => {
